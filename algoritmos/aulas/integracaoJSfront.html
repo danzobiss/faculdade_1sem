@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS no front</title>
+</head>
+
+<body>
+    Era uma vez...<button onclick="continuar()">Continuar</button>
+    <span id="span_continuacao"></span>
+
+    <div>
+        <button onclick="frutas()">Frutas</button>
+        <button onclick="legumes()">Legumes</button>
+    </div>
+    <div id="divLista">
+        <h3>Lista de Compras</h3>
+    </div>
+    
+</body>
+
+</html>
+
+<script>
+    function continuar() {
+        span_continuacao.innerHTML = "qqr <b>coisa</b> ai";
+    }
+
+    function frutas() {
+        divLista.innerHTML += "<br>Frutas";
+    }
+    function legumes() {
+        divLista.innerHTML += "<br>Legumes";
+    }
+</script>
