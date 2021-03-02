@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avaliação Continuada 1</title>
+</head>
+
+<body>
+    <img src="https://static3.depositphotos.com/1006434/220/i/600/depositphotos_2200805-stock-photo-factory-warehouse.jpg"
+    alt="Imagem estoque" style="height: 200px;">
+
+    <h1>Gestoque! Guarde bem o que está contigo!</h1>
+    <b><u>Nome do Produto:</u> </b>
+    <input id="txtNome" type="text" placeholder="Digite aqui..."><br>
+    <b><u>Unidade:</u> </b>
+    <input id="txtUnidade" type="text" placeholder="Digite aqui..."><br>
+    <b><u>Quantidade em estoque:</u> </b>
+    <input id="txtQuantidade" type="text" placeholder="Digite aqui..."><br>
+    <b><u>Valor de compra de cada Unidade:</u> </b>
+    <input id="txtCompra" type="text" placeholder="Digite aqui..."><br>
+    <b><u>Valor de venda de cada Unidade:</u> </b>
+    <input id="txtVenda" type="text" placeholder="Digite aqui..."><br>
+    <button onclick="analisar()">Analisar estoque</button><br>
+
+    <div id="divMsg"></div>
+</body>
+
+</html>
+
+<script>
+    //Não usei variável porque não consegui me perdoa ;-;
+    function analisar(){
+        divMsg.innerHTML = `<img src="https://cdn.dicionariopopular.com/imagens/nazareconfusamatematica.gif" alt="Imagem de Nazaré Tedesco fazendo cálculos"><br>` +
+                        `<b>Resultado da análise</b><br><br>`+
+
+                        `Você possui um total de <b>${txtQuantidade.value} ${txtUnidade.value}</b> de ${txtNome.value} em estoque.<br>`+
+                        `Você tem um total de <b>R$ ${Number(txtVenda.value) * Number(txtQuantidade.value)}</b> em estoque de ${txtNome.value}.<br>`+
+                        `Vai lucrar <b>R$ ${Number(txtVenda.value) - Number(txtCompra.value)}</b> em cada ${txtNome.value} vendido.<br><br>`+
+
+                        `Como comprou cada unidade por <b>R$ ${txtCompra.value}</b> e vai vender por <b>R$ ${txtVenda.value}</b>, sua margem de lucro será de <b>${((Number(txtVenda.value)/Number(txtCompra.value))-1)*100}%</b>.<br>`+
+                        `<div style="background-color: red; color: white; height: 25px; width: 200px; float: left"><b>R$ ${txtCompra.value}</b></div><div style="background-color: green; color: white; height: 25px; width: ${200*(Number(txtVenda.value)/Number(txtCompra.value))-1}px;"><b>R$ ${txtVenda.value}</b></div>`+
+                        `<b>Composição do Preço</b>`;
+    }
+</script>
