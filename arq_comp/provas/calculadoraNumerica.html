@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor Numérico</title>
+</head>
+
+<body style="background-color: crimson; line-height: 30px; font-weight: bold; padding: 10px;">
+    <h1>Marise's Machine</h1>
+    <h3>Decimal:</h3>
+    <input id="txtDecimal" placeholder="Digite o número decimal aqui...">
+    <h3>Converter para:</h3>
+
+    <input type="checkbox" id="bin">Binário
+    <div id="divBin" style="background-color: powderblue; display: none;
+        height: 40px; width: 300px;"></div><br>
+
+    <input type="checkbox" id="oct">Octal
+    <div id="divOct" style="background-color: powderblue; display: none;
+        height: 40px; width: 300px;"></div><br>
+
+    <input type="checkbox" id="hex">Hexadecimal
+    <div id="divHex" style="background-color: powderblue; display: none;
+        height: 40px; width: 300px;"></div><br>
+
+    <button id="converter" onclick="converter()">Converter</button>
+</body>
+
+</html>
+
+<script>
+    var elevacao = 1;
+    var binario = "";
+    var octal = "";
+    var hexadecimal = "";
+
+    function converter() {
+        var decimal = Number(document.getElementById("txtDecimal").value);
+        if (bin.checked == true) {
+            divBin.style.display = 'block';
+        }
+        if (oct.checked == true) {
+            divOct.style.display = 'block';
+        }
+        if (hex.checked == true) {
+            divHex.style.display = 'block';
+        }
+
+        binario = decimal.toString(2);
+        octal = decimal.toString(8);
+        hexadecimal = decimal.toString(16).toUpperCase();
+        // while (decimal > elevacao) {
+        //     elevacao = elevacao * 2;
+        // }
+        // while (decimal > 0) {
+        //     if (decimal > 0) {
+        //         binario += "1";
+        //     } else {
+        //         binario += "0";
+        //     }
+        //     decimal = decimal - elevacao;
+        //     elevacao = elevacao / 2;
+        // }
+        divBin.innerHTML = binario;
+        divOct.innerHTML = octal;
+        divHex.innerHTML = hexadecimal;
+    }
+</script>
