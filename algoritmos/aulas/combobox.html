@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combo box</title>
+</head>
+
+<body>
+    <h2>Frutas da feira:</h2>
+    <select id="comboboxFrutas">    
+        <option value="null">Selecione uma opção...</option>
+        <option value="1">Tangerina</option>
+        <option value="2">Abacate</option>
+        <option value="3">Laranja</option>
+    </select>
+
+    <h2>Pontos cardeais:</h2>
+    <select id="comboboxCardeais">    
+        <option value="null">Selecione uma opção...</option>
+        <option value="norte">Norte</option>
+        <option value="sul">Sul</option>
+        <option value="leste">Leste</option>
+        <option value="oeste">Oeste</option>
+    </select>
+
+    <h2>Humor:</h2>
+    <select id="comboboxHumor" onchange="humor()">    
+        <option value="null">Selecione uma opção...</option>
+        <option value="NÃO ENCHE!!!">Péssimo</option>
+        <option value="O QUE É QUE VOCÊ QUER?!">Ruim</option>
+        <option value="Oi">Neutro</option>
+        <option value="Olá, diga meu parça">Bom</option>
+        <option value="Olá, a vida é bela! Posso ajudar?">Ótimo</option>
+    </select>
+
+</body>
+
+</html>
+
+<script>
+    function humor() {
+        alert(`Quando te chamarem, você vai responder: "${comboboxHumor.value}"`);
+    }
+</script>
